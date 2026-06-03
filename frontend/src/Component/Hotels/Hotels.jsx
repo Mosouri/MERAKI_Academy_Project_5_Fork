@@ -3,13 +3,15 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import axios from "axios";
-import './Hotels.css'
+import "./Hotels.css";
 
 const Hotels = () => {
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/hotels/bestHotel/best`)
+      .get(
+        `https://meraki-academy-project-5-15ih.onrender.com/hotels/bestHotel/best`,
+      )
       .then((result) => {
         console.log(result.data.result);
         setHotels(result.data.result);
@@ -23,8 +25,9 @@ const Hotels = () => {
     <div className="imgHotel">
       {hotels.map((ele, i) => {
         // {console.log(ele.name)}
-        return (<div>
-            <Card style={{ width: "22rem",height:"35rem",display:"grid"   }}>
+        return (
+          <div>
+            <Card style={{ width: "22rem", height: "35rem", display: "grid" }}>
               <Card.Img variant="top" src={ele.image_url} />
               <Card.Body>
                 <Card.Title>
@@ -38,7 +41,7 @@ const Hotels = () => {
                 <Button variant="primary">See More</Button>
               </Card.Body>
             </Card>
-        </div>
+          </div>
         );
       })}
       {/* <div>Hotels</div> */}
@@ -53,7 +56,6 @@ const Hotels = () => {
           <Button variant="primary">See More</Button>
         </Card.Body>
       </Card> */}
-
     </div>
   );
 };
