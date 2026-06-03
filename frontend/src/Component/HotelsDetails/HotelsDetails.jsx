@@ -60,7 +60,7 @@ const HotelsDetails = () => {
   // console.log(localStorage.getItem("role_id"));
   useEffect(() => {
     axios
-      .get("http://localhost:5000/hotels/")
+      .get("https://meraki-academy-project-5-15ih.onrender.com/hotels/")
       .then((result) => {
         // console.log(result.data.result);
         setHotelDetails(result.data.result);
@@ -462,7 +462,7 @@ const HotelsDetails = () => {
 
                       axios
                         .post(
-                          "http://localhost:5000/hotels/",
+                          "https://meraki-academy-project-5-15ih.onrender.com/hotels/",
                           addHotel
                           /*    {
                             headers: { Authorization: `Bearer ${token}` },
@@ -634,7 +634,7 @@ const HotelsDetails = () => {
                 onClick={() =>
                   axios
                     .delete(
-                      `http://localhost:5000/hotels/${deleteHotel.hotel_id}`
+                      `https://meraki-academy-project-5-15ih.onrender.com/hotels/${deleteHotel.hotel_id}`
                     )
                     .then((result) => {
                       handleCloseDelete();
@@ -821,7 +821,7 @@ const HotelsDetails = () => {
                         onClick={() => {
                           axios
                             .put(
-                              `http://localhost:5000/hotels/${updateHotel.hotel_id}`,
+                              `https://meraki-academy-project-5-15ih.onrender.com/hotels/${updateHotel.hotel_id}`,
                               editHotel
                             )
                             .then((result) => {
@@ -988,7 +988,7 @@ const HotelsDetails = () => {
                   console.log(hotel_id); */
                     axios
                       .post(
-                        `http://localhost:5000/userHotel/${hotel_id}`,
+                        `https://meraki-academy-project-5-15ih.onrender.com/userHotel/${hotel_id}`,
                         { from_date: fromDate, to_date: toDate },
                         {
                           headers: { Authorization: `Bearer ${token} ` },
@@ -998,7 +998,7 @@ const HotelsDetails = () => {
                         console.log(result);
                         axios
                           .put(
-                            `http://localhost:5000/reservations`,
+                            `https://meraki-academy-project-5-15ih.onrender.com/reservations`,
                             {
                               hotel_id: hotel_id,
                             },
